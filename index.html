@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/reset.css" rel="stylesheet" />
+    <link href="./css/styles.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pomodoro</title>
+  </head>
+
+  <body>
+    <main class="teste">
+      <div id="backgroundContent">
+        <section id="pomodoroContainer">
+          <div id="buttonSelectionTimeContainer">
+            <button class="buttonSelectionTime">Pomodoro</button>
+            <button class="buttonSelectionTime">Intervalo Curto</button>
+            <button class="buttonSelectionTime">Intervalo Longo</button>
+          </div>
+
+          <div id="pomodoroInputContainer">
+            <input
+              type="text"
+              id="pomodoroInput"
+              placeholder="25:00"
+              value="25:00"
+              maxlength="5"
+            />
+          </div>
+
+          <div id="buttonSelectionActionContainer">
+            <button class="buttonSelectionAction">COMEÇAR</button>
+            <button class="buttonSelectionAction">PAUSAR</button>
+            <button class="buttonSelectionAction">RECOMEÇAR</button>
+          </div>
+
+          <div id="line"></div>
+
+          <div id="achievePomodoroTextContainer">
+            <h2 class="achievePomodoroText">Pomodoros Concluídos:</h2>
+            <p class="achievePomodoroText">0</p>
+          </div>
+        </section>
+
+        <div id="lineVertical"></div>
+
+        <section id="tasksContainer">
+          <div>
+            <h2 id="taskTitle">Tarefas</h2>
+          </div>
+
+          <div id="inputContainer">
+            <input
+              type="text"
+              id="taskInput"
+              placeholder="Adicione uma nova tarefa"
+            />
+            <button id="addTaskButton">+</button>
+          </div>
+
+          <div id="tasksBacklogContainer">
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="js/pomodoro.js"></script>
+    <script src="js/tasks.js"></script>
+  </body>
+</html>

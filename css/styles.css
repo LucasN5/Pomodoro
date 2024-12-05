@@ -1,0 +1,188 @@
+/* Main */
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/img/background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.teste {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Div Content*/
+
+#backgroundContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 70%;
+  width: 70%;
+  background-color: rgba(213, 213, 213, 0.8);
+  border-radius: 5px;
+  gap: 15px;
+}
+
+/* Pomodoro */
+
+#pomodoroContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 55%;
+  gap: 50px;
+}
+
+#buttonSelectionTimeContainer {
+  display: flex;
+  gap: 15px;
+}
+
+.buttonSelectionTime {
+  background-color: #84a7c5;
+  font-family: "Roboto Flex";
+  border-style: none;
+  font-weight: bold;
+  font-size: 20px;
+  color: #2a4054;
+  border-radius: 5px;
+  width: 180px;
+  height: 50px;
+  transition: opacity 0.3s;
+}
+
+.buttonSelectionTime:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+
+#pomodoroInputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pomodoroInput {
+  font-family: "Roboto Flex";
+  font-weight: bolder;
+  font-size: 100px;
+  color: #343434;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  width: 35%;
+}
+
+#pomodoroInput::placeholder {
+  color: #343434;
+}
+
+#buttonSelectionActionContainer {
+  display: flex;
+  gap: 15px;
+}
+
+.buttonSelectionAction {
+  background-color: #84a7c5;
+  font-family: "Roboto Flex";
+  border-style: none;
+  font-weight: bolder;
+  font-size: 30px;
+  color: #2a4054;
+  border-radius: 5px;
+  width: 200px;
+  height: 80px;
+  text-align: center;
+  transition: opacity 0.3s;
+  box-shadow: 0 4px 2px;
+}
+
+.buttonSelectionAction:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+
+#line {
+  width: 80%;
+  border: none;
+  height: 2px;
+  background-color: #a0a0a0;
+  margin: 0 auto;
+}
+
+#achievePomodoroTextContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.achievePomodoroText {
+  font-family: "Roboto Flex";
+  font-weight: 500;
+  font-size: 25px;
+  color: #343434;
+}
+
+/* Vertical Line */
+
+#lineVertical {
+  width: 2px;
+  border: none;
+  height: 620px;
+  background-color: #a0a0a0;
+  margin: 0 auto;
+}
+
+/* Tasks */
+
+#tasksContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  gap: 50px;
+}
+
+#taskTitle {
+  font-family: "Roboto Flex";
+  font-weight: bolder;
+  font-size: 50px;
+  color: #343434;
+}
+
+#inputContainer {
+  display: flex;
+  flex-direction: flex-row;
+  gap: 10px;
+}
+
+#tasksBacklogContainer {
+  width: 70%;
+  height: 400px;
+  background-color: #dbdbdb;
+  border-radius: 5px;
+}
+
+#taskInput {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #84a7c5;
+  width: 350px;
+}
+
+#addTaskButton {
+  border-radius: 50%;
+  border: none;
+  background-color: #84a7c5;
+  cursor: pointer;
+}
