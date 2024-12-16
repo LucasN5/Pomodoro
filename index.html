@@ -20,9 +20,15 @@
       <div id="backgroundContent">
         <section id="pomodoroContainer">
           <div id="buttonSelectionTimeContainer">
-            <button class="buttonSelectionTime">Pomodoro</button>
-            <button class="buttonSelectionTime">Intervalo Curto</button>
-            <button class="buttonSelectionTime">Intervalo Longo</button>
+            <button class="buttonSelectionTime" id="buttonSelectionPomodoro">
+              Pomodoro
+            </button>
+            <button class="buttonSelectionTime" id="buttonSelectionShort">
+              Intervalo Curto
+            </button>
+            <button class="buttonSelectionTime" id="buttonSelectionLong">
+              Intervalo Longo
+            </button>
           </div>
 
           <div id="pomodoroInputContainer">
@@ -52,7 +58,7 @@
 
           <div id="achievePomodoroTextContainer">
             <h2 class="achievePomodoroText">Pomodoros Concluídos:</h2>
-            <p class="achievePomodoroText">0</p>
+            <p class="achievePomodoroText" id="AchievePomodoroCount">0</p>
           </div>
         </section>
 
