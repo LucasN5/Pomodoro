@@ -84,7 +84,12 @@ body {
 #pomodoroInput::placeholder {
   color: #343434;
 }
-
+/*
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+*/
 #buttonSelectionActionContainer {
   display: flex;
   gap: 15px;
