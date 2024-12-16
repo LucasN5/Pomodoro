@@ -2,16 +2,15 @@ let inputTime = document.getElementById("pomodoroInput");
 let buttonActionStart = document.getElementById("buttonSelectionStart");
 let buttonActionPause = document.getElementById("buttonSelectionPause");
 let buttonActionRestart = document.getElementById("buttonSelectionRestart");
-
 let buttonPomodoro = document.getElementById("buttonSelectionPomodoro");
-
 let buttonPomodoroShort = document.getElementById("buttonSelectionShort");
-
 let buttonPomodoroLong = document.getElementById("buttonSelectionLong");
+let countPomodoro = document.getElementById("AchievePomodoroCount");
 
 let totalSeconds; // Declarar fora para uso global
 let timer; // Variável para armazenar o intervalo
 let initialSeconds;
+let pomodoroCount = 0;
 
 buttonActionStart.addEventListener("click", () => {
   const [minutes, seconds] = inputTime.value.split(":").map(Number);
@@ -29,12 +28,22 @@ buttonActionStart.addEventListener("click", () => {
       seconds
     ).padStart(2, "0")}`;
 
+    document.title = `Pomodoro - ${String(minutes).padStart(2, "0")}:${String(
+      seconds
+    ).padStart(2, "0")}`;
+
     //Desabilita o usuário de interagir com o input enquanto estiver rodando o cronometro
     inputTime.disabled = true;
 
     // Parar o temporizador ao chegar a 0
     if (totalSeconds <= 0) {
       clearInterval(timer);
+      pomodoroCount++;
+      countPomodoro.innerHTML = pomodoroCount;
+
+      inputTime.disabled = false;
+
+      document.title = "Pomodoro Concluído!";
     }
   }, 1000);
 });
@@ -48,6 +57,7 @@ buttonActionPause.addEventListener("click", () => {
 buttonActionRestart.addEventListener("click", () => {
   clearInterval(timer);
   totalSeconds = initialSeconds;
+  inputTime.disabled = false;
   inputTime.value = `${String(Math.floor(initialSeconds / 60)).padStart(
     2,
     "0"
@@ -56,18 +66,21 @@ buttonActionRestart.addEventListener("click", () => {
 
 buttonPomodoro.addEventListener("click", () => {
   clearInterval(timer);
+  inputTime.disabled = false;
   inputTime.value = "25:00";
   inputSeconds = 25 * 60;
 });
 
 buttonPomodoroShort.addEventListener("click", () => {
   clearInterval(timer);
+  inputTime.disabled = false;
   inputTime.value = "05:00";
   inputSeconds = 5 * 60;
 });
 
 buttonPomodoroLong.addEventListener("click", () => {
   clearInterval(timer);
+  inputTime.disabled = false;
   inputTime.value = "40:00";
   inputSeconds = 40 * 60;
 });
