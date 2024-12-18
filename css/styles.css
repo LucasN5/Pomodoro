@@ -177,12 +177,50 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   border-radius: 5px;
 }
 
+ol {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  padding-bottom: 8px;
+  padding-top: 10px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-color: #a0a0a0;
+  margin: 0 auto;
+}
+
+li > p {
+  font-family: "Roboto Flex";
+}
+
+li > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  background-color: #ff4d4d;
+  cursor: pointer;
+}
+
 #taskInput {
   outline: none;
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #84a7c5;
   width: 350px;
+}
+
+#taskInput::placeholder {
+  font-family: Roboto Flex;
+  font-weight: 500px;
 }
 
 #addTaskButton {

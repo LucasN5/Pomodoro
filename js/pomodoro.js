@@ -12,18 +12,18 @@ let timer; // Variável para armazenar o intervalo
 let initialSeconds;
 let pomodoroCount = 0;
 
+//Ação de cronometro ao selecionar o botão "começar"
+
 buttonActionStart.addEventListener("click", () => {
   const [minutes, seconds] = inputTime.value.split(":").map(Number);
   totalSeconds = minutes * 60 + seconds;
   initialSeconds = totalSeconds;
 
-  // Iniciar o temporizador
   timer = setInterval(() => {
     totalSeconds--;
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
 
-    //Adiciona espaçamento e zeros na formatação dos valores do cronometro
     inputTime.value = `${String(minutes).padStart(2, "0")}:${String(
       seconds
     ).padStart(2, "0")}`;
@@ -32,10 +32,8 @@ buttonActionStart.addEventListener("click", () => {
       seconds
     ).padStart(2, "0")}`;
 
-    //Desabilita o usuário de interagir com o input enquanto estiver rodando o cronometro
     inputTime.disabled = true;
 
-    // Parar o temporizador ao chegar a 0
     if (totalSeconds <= 0) {
       clearInterval(timer);
       pomodoroCount++;
@@ -49,11 +47,13 @@ buttonActionStart.addEventListener("click", () => {
 });
 
 //Pausa o cronometro
+
 buttonActionPause.addEventListener("click", () => {
   clearInterval(timer);
 });
 
 //Para o cronometro, adiciona o valor inicial do input a ele novamente formatado em minutoes e segundos
+
 buttonActionRestart.addEventListener("click", () => {
   clearInterval(timer);
   totalSeconds = initialSeconds;
@@ -64,6 +64,8 @@ buttonActionRestart.addEventListener("click", () => {
   )}:${String(initialSeconds % 60).padStart(2, "0")}`;
 });
 
+//Seleção padrão do tempo pomodoro
+
 buttonPomodoro.addEventListener("click", () => {
   clearInterval(timer);
   inputTime.disabled = false;
@@ -71,12 +73,16 @@ buttonPomodoro.addEventListener("click", () => {
   inputSeconds = 25 * 60;
 });
 
+//Seleção de tempo de descanso curto do pomodoro
+
 buttonPomodoroShort.addEventListener("click", () => {
   clearInterval(timer);
   inputTime.disabled = false;
   inputTime.value = "05:00";
   inputSeconds = 5 * 60;
 });
+
+//Seleção de tempo de descanso longo do pomodoro
 
 buttonPomodoroLong.addEventListener("click", () => {
   clearInterval(timer);
