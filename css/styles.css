@@ -9,7 +9,7 @@ body {
   background-size: cover;
 }
 
-.teste {
+#mainContent {
   height: 100%;
   width: 100%;
   display: flex;
@@ -47,6 +47,10 @@ body {
 }
 
 .buttonSelectionTime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background-color: #84a7c5;
   font-family: "Roboto Flex";
   border-style: none;
@@ -68,6 +72,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 #pomodoroInput {
@@ -78,18 +83,14 @@ body {
   outline: none;
   background-color: transparent;
   border: none;
-  width: 35%;
+  max-width: 35%;
+  text-align: center;
 }
 
 #pomodoroInput::placeholder {
   color: #343434;
 }
-/*
-input[type="time"]::-webkit-calendar-picker-indicator {
-  display: none;
-  -webkit-appearance: none;
-}
-*/
+
 #buttonSelectionActionContainer {
   display: flex;
   gap: 15px;
@@ -108,12 +109,15 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   text-align: center;
   transition: opacity 0.3s;
   box-shadow: 0 4px 2px;
+  box-sizing: border-box;
 }
 
 .buttonSelectionAction:hover {
   opacity: 80%;
   cursor: pointer;
 }
+
+/* Horizontal Line*/
 
 #line {
   width: 80%;
@@ -142,9 +146,15 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 #lineVertical {
   width: 2px;
   border: none;
-  height: 620px;
+  height: 95%;
   background-color: #a0a0a0;
   margin: 0 auto;
+}
+
+/* Responsive Vertical Line */
+
+#responsiveVerticalLine {
+  display: none;
 }
 
 /* Tasks */
@@ -152,7 +162,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 #tasksContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 100%;
   width: 40%;
   gap: 50px;
 }
@@ -172,7 +184,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 #tasksBacklogContainer {
   width: 70%;
-  height: 400px;
+  height: 50%;
   background-color: #dbdbdb;
   border-radius: 5px;
 }
@@ -228,4 +240,307 @@ li > button {
   border: none;
   background-color: #84a7c5;
   cursor: pointer;
+}
+
+// Responsive Design
+
+@media only screen and (min-width: 992px) {
+  #backgroundContent {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 991.98px) {
+  #backgroundContent {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Display Flex
+
+@media (max-width: 575.98px) {
+  #pomodoroContainer {
+    width: 55%;
+    height: 90%;
+  }
+
+  #tasksBacklogContainer {
+    width: 70%;
+    height: 80%;
+  }
+}
+
+/* Mobile */
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* background of content */
+
+  #backgroundContent {
+    height: 90%;
+    width: 80%;
+  }
+
+  /* Pomodoro side*/
+
+  #pomodoroContainer {
+    width: 80%;
+    gap: 35px;
+    padding: 20px;
+  }
+
+  .buttonSelectionTime {
+    font-size: 15px;
+    width: 125px;
+    height: 40px;
+  }
+
+  #pomodoroInput {
+    max-width: 60%;
+    font-size: 70px;
+  }
+
+  .buttonSelectionAction {
+    font-size: 20px;
+    width: 130px;
+    height: 60px;
+  }
+
+  .achievePomodoroText {
+    font-size: 20px;
+  }
+
+  /* Horizontal Line | Vertical Line | Vertical Line Responsive*/
+  #line {
+    display: none;
+  }
+
+  #lineVertical {
+    display: none;
+  }
+
+  #responsiveVerticalLine {
+    display: block;
+    width: 80%;
+    border: none;
+    height: 3px;
+    background-color: #a0a0a0;
+    margin: 0 auto;
+  }
+
+  /* Task Side*/
+  #tasksContainer {
+    width: 90%;
+    gap: 35px;
+  }
+
+  #taskTitle {
+    font-size: 40px;
+  }
+}
+
+/* Medium devices */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* background of content */
+
+  #backgroundContent {
+    height: 90%;
+    width: 80%;
+  }
+
+  /* Pomodoro side*/
+
+  #pomodoroContainer {
+    width: 80%;
+    gap: 35px;
+    padding: 20px;
+  }
+
+  .buttonSelectionTime {
+    font-size: 15px;
+    width: 125px;
+    height: 40px;
+  }
+
+  #pomodoroInput {
+    max-width: 60%;
+    font-size: 70px;
+  }
+
+  .buttonSelectionAction {
+    font-size: 20px;
+    width: 130px;
+    height: 60px;
+  }
+
+  .achievePomodoroText {
+    font-size: 20px;
+  }
+
+  /* Horizontal Line | Vertical Line | Vertical Line Responsive*/
+  #line {
+    display: none;
+  }
+
+  #lineVertical {
+    display: none;
+  }
+
+  #responsiveVerticalLine {
+    display: block;
+    width: 80%;
+    border: none;
+    height: 3px;
+    background-color: #a0a0a0;
+    margin: 0 auto;
+  }
+
+  /* Task Side*/
+  #tasksContainer {
+    width: 90%;
+    gap: 35px;
+  }
+
+  #taskTitle {
+    font-size: 40px;
+  }
+}
+
+/* Large devices */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* background of content */
+
+  #backgroundContent {
+    height: 70%;
+    width: 85%;
+  }
+
+  /* Pomodoro side*/
+  .buttonSelectionTime {
+    font-size: 15px;
+    width: 125px;
+    height: 50px;
+  }
+
+  .buttonSelectionAction {
+    font-size: 20px;
+    width: 135px;
+    height: 80px;
+  }
+
+  #pomodoroInput {
+    max-width: 60%;
+  }
+
+  /* Task side*/
+
+  #inputContainer {
+    width: 80%;
+  }
+}
+
+/* Extra large devices */
+
+@media (min-width: 1200px) {
+  /* Pomodoro side*/
+  .buttonSelectionTime {
+    font-size: 16px;
+    width: 135px;
+    height: 50px;
+  }
+
+  .buttonSelectionAction {
+    font-size: 20px;
+
+    width: 135px;
+    height: 80px;
+  }
+
+  #pomodoroInput {
+    max-width: 60%;
+  }
+
+  /* Task side*/
+
+  #inputContainer {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1400px) {
+  /* Pomodoro side*/
+  .buttonSelectionTime {
+    font-size: 20x;
+    width: 150px;
+    height: 50px;
+  }
+
+  #pomodoroInput {
+    max-width: 60%;
+  }
+
+  .buttonSelectionAction {
+    font-size: 25px;
+    width: 160px;
+    height: 80px;
+  }
+
+  /* Task side*/
+
+  #inputContainer {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1600px) {
+  /* Pomodoro side*/
+  .buttonSelectionTime {
+    font-size: 20x;
+    width: 140px;
+    height: 50px;
+  }
+
+  #pomodoroInput {
+    max-width: 60%;
+  }
+
+  .buttonSelectionAction {
+    font-size: 25px;
+    width: 170px;
+    height: 80px;
+  }
+
+  /* Task side*/
+
+  #inputContainer {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1700px) {
+  /* Pomodoro side*/
+  .buttonSelectionTime {
+    font-size: 20x;
+    width: 180px;
+    height: 50px;
+  }
+
+  #pomodoroInput {
+    max-width: 60%;
+  }
+
+  .buttonSelectionAction {
+    font-size: 25px;
+    width: 200px;
+    height: 80px;
+  }
+
+  /* Task side*/
+
+  #inputContainer {
+    width: 80%;
+  }
 }
